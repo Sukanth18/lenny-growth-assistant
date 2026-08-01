@@ -1,0 +1,23 @@
+# ── Core ─────────────────────────────────────────────────────────────────────
+fastapi==0.115.5
+uvicorn[standard]==0.32.1
+pydantic==2.10.3
+python-dotenv==1.0.1
+
+# ── Database ──────────────────────────────────────────────────────────────────
+sqlalchemy[asyncio]==2.0.36
+aiosqlite==0.20.0           # SQLite async driver (no Docker needed for local dev)
+# asyncpg==0.30.0           # PostgreSQL async driver (use this for Supabase/Railway)
+# alembic==1.14.0           # DB migrations (optional)
+
+# ── LLM Providers ─────────────────────────────────────────────────────────────
+anthropic==0.40.0           # Anthropic Claude SDK
+ollama==0.4.4               # Ollama Python client
+
+# ── RAG / Vector Store ────────────────────────────────────────────────────────
+chromadb==0.5.20            # Local persistent vector store
+PyYAML==6.0.2               # YAML frontmatter parsing
+
+# ── Utilities ─────────────────────────────────────────────────────────────────
+httpx>=0.27.0,<0.28.0       # Async HTTP client (constrained by ollama 0.4.4)
+aiofiles==24.1.0            # Async file I/O
