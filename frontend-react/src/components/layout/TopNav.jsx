@@ -55,10 +55,10 @@ function ProfileDropdown({ onClose }) {
         top: 'calc(100% + 8px)',
         right: 0,
         width: 260,
-        background: '#fff',
+        background: '#181D2B',
         borderRadius: 16,
         border: '1px solid var(--color-border)',
-        boxShadow: '0 16px 48px rgba(0,0,0,0.12), 0 4px 12px rgba(0,0,0,0.06)',
+        boxShadow: '0 20px 60px rgba(0,0,0,0.5)',
         overflow: 'hidden',
         zIndex: 200,
       }}
@@ -203,7 +203,7 @@ export default function TopNav({ onSearchClick }) {
 
   return (
     <header style={{
-      height: 56, background: '#fff',
+      height: 56, background: 'var(--color-bg-card)',
       borderBottom: '1px solid var(--color-border)',
       display: 'flex', alignItems: 'center',
       padding: '0 20px', gap: 12, flexShrink: 0, zIndex: 10,

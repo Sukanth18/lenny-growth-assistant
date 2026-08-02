@@ -127,7 +127,7 @@ export default function PromptsPage() {
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          className="bg-white rounded-card p-6 border border-border shadow-card flex flex-col md:flex-row md:items-center justify-between gap-4"
+          className="bg-bg-card rounded-card p-6 border border-border shadow-card flex flex-col md:flex-row md:items-center justify-between gap-4"
         >
           <div>
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-50 text-amber-700 border border-amber-200 text-xs font-semibold mb-3">
@@ -143,13 +143,13 @@ export default function PromptsPage() {
           </div>
 
           <div className="relative w-full md:w-72 self-start md:self-auto">
-            <Search size={15} className="absolute left-3 text-ink-muted" />
+            <Search size={15} className="absolute left-3 top-1/2 -translate-y-1/2 text-ink-muted pointer-events-none" />
             <input
               type="text"
               placeholder="Search prompts..."
               value={search}
               onChange={e => setSearch(e.target.value)}
-              className="w-full bg-bg-subtle text-ink text-xs pl-9 pr-3 py-2.5 rounded-xl border border-transparent focus:border-amber-400 focus:bg-white outline-none transition-all"
+              className="w-full bg-bg-subtle text-ink text-xs pl-9 pr-3 py-2.5 rounded-xl border border-transparent focus:border-amber-400/50 focus:bg-bg-card outline-none transition-all"
             />
           </div>
         </motion.div>
@@ -179,7 +179,7 @@ export default function PromptsPage() {
                       <motion.div
                         key={uniqueId}
                         whileHover={{ y: -2 }}
-                        className="bg-white rounded-card p-4 border border-border hover:border-amber-300 hover:shadow-card transition-all flex flex-col justify-between"
+                        className="bg-bg-card rounded-card p-4 border border-border hover:border-amber-500/40 hover:shadow-card transition-all flex flex-col justify-between"
                       >
                         <div>
                           <div className="flex items-center justify-between gap-2 mb-2">

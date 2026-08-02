@@ -15,13 +15,13 @@ export default function Modal({ open, onClose, title, children, maxWidth = 'max-
         >
           {/* Backdrop */}
           <motion.div
-            className="absolute inset-0 bg-ink/20 backdrop-blur-sm"
+            className="absolute inset-0 bg-black/70 backdrop-blur-md"
             onClick={onClose}
           />
 
           {/* Panel */}
           <motion.div
-            className={`relative bg-white rounded-card shadow-[0_32px_80px_rgba(0,0,0,0.15)] w-full ${maxWidth} z-10 overflow-hidden`}
+            className={`relative bg-[#181D2B] rounded-card border border-border shadow-[0_32px_80px_rgba(0,0,0,0.6)] w-full ${maxWidth} z-10 overflow-hidden`}
             initial={{ opacity: 0, scale: 0.95, y: 12 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 8 }}

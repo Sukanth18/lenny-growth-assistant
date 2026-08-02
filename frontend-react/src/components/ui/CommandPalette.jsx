@@ -45,11 +45,11 @@ export default function CommandPalette({ open, onClose }) {
           transition={{ duration: 0.12 }}
         >
           <motion.div
-            className="absolute inset-0 bg-ink/20 backdrop-blur-sm"
+            className="absolute inset-0 bg-black/70 backdrop-blur-md"
             onClick={onClose}
           />
           <motion.div
-            className="relative bg-white w-full max-w-[540px] rounded-[18px] shadow-[0_32px_80px_rgba(0,0,0,0.18)] overflow-hidden z-10"
+            className="relative bg-[#181D2B] border border-border w-full max-w-[540px] rounded-[18px] shadow-[0_32px_80px_rgba(0,0,0,0.6)] overflow-hidden z-10"
             initial={{ opacity: 0, scale: 0.96, y: -8 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.96, y: -8 }}

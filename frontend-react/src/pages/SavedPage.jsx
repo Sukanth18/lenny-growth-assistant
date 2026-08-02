@@ -56,9 +56,9 @@ export default function SavedPage() {
 
         {/* Header Card */}
         <motion.div
-          initial={{ opacity: 0, y: 10 }}
+          initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
-          className="bg-white rounded-2xl p-6 md:p-7 border border-border shadow-xs flex flex-col md:flex-row md:items-center justify-between gap-6"
+          className="bg-bg-card rounded-2xl p-6 md:p-7 border border-border shadow-card flex flex-col md:flex-row md:items-center justify-between gap-6"
         >
           <div>
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-50 text-amber-700 border border-amber-200/80 text-xs font-semibold mb-3">
@@ -102,8 +102,8 @@ export default function SavedPage() {
               onClick={() => setActiveFilter(f.id)}
               className={`px-3.5 py-1.5 rounded-xl text-xs font-semibold transition-all flex items-center gap-1.5 ${
                 activeFilter === f.id
-                  ? 'bg-amber-50 text-amber-800 border border-amber-300 shadow-xs'
-                  : 'bg-white text-ink-secondary border border-border hover:bg-bg-subtle hover:text-ink'
+                  ? 'bg-amber-950/60 text-amber-300 border border-amber-500/30 shadow-xs'
+                  : 'bg-bg-card text-ink-secondary border border-border hover:bg-bg-subtle hover:text-ink'
               }`}
             >
               {f.label}
@@ -146,7 +146,7 @@ export default function SavedPage() {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, scale: 0.95 }}
                     transition={{ duration: 0.2, delay: idx * 0.03 }}
-                    className="bg-white rounded-2xl border border-border hover:border-amber-300 hover:shadow-card transition-all flex flex-col justify-between overflow-hidden group"
+                    className="bg-bg-card rounded-2xl border border-border hover:border-amber-500/40 hover:shadow-card transition-all flex flex-col justify-between overflow-hidden group"
                   >
                     <div className="p-5 flex-1 flex flex-col min-w-0">
                       {/* Card Header */}

@@ -297,7 +297,7 @@ export default function InputComposer() {
 
         {/* Composer box */}
         <div style={{
-          background: '#fff',
+          background: 'var(--color-bg-card)',
           borderRadius: 18,
           border: `1px solid ${isRecording ? 'var(--color-danger)' : 'var(--color-border)'}`,
           boxShadow: isRecording

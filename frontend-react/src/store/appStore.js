@@ -1,5 +1,5 @@
 import { create } from 'zustand';
-import { apiGet, apiPost, apiDelete, streamChat } from '../lib/api';
+import { apiGet, apiPost, apiDelete, apiPatch, streamChat } from '../lib/api';
 
 const useAppStore = create((set, get) => ({
   // ── Sessions ──────────────────────────────────────────────────────────────
@@ -20,6 +20,10 @@ const useAppStore = create((set, get) => ({
   totalChunks: 0,
   bookmarks: (() => {
     try { return JSON.parse(localStorage.getItem('lenny_bookmarks') || '[]'); }
+    catch { return []; }
+  })(),
+  pinnedSessionIds: (() => {
+    try { return JSON.parse(localStorage.getItem('lenny_pinned_sessions') || '[]'); }
     catch { return []; }
   })(),
 
@@ -62,6 +66,7 @@ const useAppStore = create((set, get) => ({
 
   setSidebarTab: (tab) => set({ sidebarTab: tab }),
   setSidebarSearch: (q) => set({ sidebarSearch: q }),
+  setPendingDelete: (id) => set({ pendingDeleteId: id }),
 
 
   // ── Actions: Sessions ─────────────────────────────────────────────────────
@@ -137,9 +142,38 @@ const useAppStore = create((set, get) => ({
         ...(activeSessionId === sessionId ? { activeSessionId: null, messages: [], page: 'dashboard' } : {}),
         pendingDeleteId: null,
       }));
-      get().addToast('Chat deleted', 'success');
     } catch {
       get().addToast('Failed to delete session', 'error');
+    }
+  },
+
+  togglePinSession: (sessionId) => {
+    const { pinnedSessionIds, addToast } = get();
+    const isPinned = pinnedSessionIds.includes(sessionId);
+    const next = isPinned
+      ? pinnedSessionIds.filter(id => id !== sessionId)
+      : [sessionId, ...pinnedSessionIds];
+
+    localStorage.setItem('lenny_pinned_sessions', JSON.stringify(next));
+    set({ pinnedSessionIds: next });
+    addToast(isPinned ? 'Unpinned chat' : 'Pinned chat to top', 'info');
+  },
+
+  renameSession: async (sessionId, newTitle) => {
+    const trimmed = newTitle.trim();
+    if (!trimmed) return;
+
+    // Optimistically update state
+    set(s => ({
+      sessions: s.sessions.map(x => x.id === sessionId ? { ...x, title: trimmed } : x),
+    }));
+
+    try {
+      await apiPatch(`/sessions/${sessionId}/title?title=${encodeURIComponent(trimmed)}`);
+      get().addToast('Chat renamed', 'success');
+    } catch (e) {
+      console.error('Failed to rename session:', e);
+      get().addToast('Failed to rename chat', 'error');
     }
   },
 

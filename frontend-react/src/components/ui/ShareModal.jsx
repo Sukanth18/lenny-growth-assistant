@@ -94,9 +94,9 @@ export default function ShareModal({ open, onClose, content = '' }) {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
         >
-          <motion.div className="absolute inset-0 bg-ink/30 backdrop-blur-xs" onClick={onClose} />
+          <motion.div className="absolute inset-0 bg-black/70 backdrop-blur-md" onClick={onClose} />
           <motion.div
-            className="relative bg-white rounded-2xl shadow-card-hover w-full max-w-md z-10 overflow-hidden border border-border"
+            className="relative bg-[#181D2B] rounded-2xl shadow-[0_32px_80px_rgba(0,0,0,0.6)] w-full max-w-md z-10 overflow-hidden border border-border"
             initial={{ opacity: 0, scale: 0.96, y: 16 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.96, y: 8 }}

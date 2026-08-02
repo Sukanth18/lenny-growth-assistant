@@ -50,7 +50,7 @@ export default function TranscriptsPage() {
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          className="bg-white rounded-card p-6 border border-border shadow-card relative overflow-hidden"
+          className="bg-bg-card rounded-card p-6 border border-border shadow-card relative overflow-hidden"
         >
           <div className="absolute -right-8 -bottom-8 w-48 h-48 bg-primary-light rounded-full blur-2xl opacity-60 pointer-events-none" />
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 relative z-10">
@@ -83,13 +83,13 @@ export default function TranscriptsPage() {
         <div className="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-3">
           {/* Search Input */}
           <div className="relative flex-1 max-w-md">
-            <Search size={16} className="absolute left-3 text-ink-muted" />
+            <Search size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-ink-muted pointer-events-none" />
             <input
               type="text"
               placeholder="Search by guest name, topic, or episode title..."
               value={search}
               onChange={e => setSearch(e.target.value)}
-              className="w-full bg-white text-ink text-sm pl-9 pr-4 py-2.5 rounded-xl border border-border focus:border-primary focus:ring-2 focus:ring-primary-ring outline-none transition-all shadow-xs"
+              className="w-full bg-bg-card text-ink text-sm pl-9 pr-4 py-2.5 rounded-xl border border-border focus:border-primary focus:ring-2 focus:ring-primary-ring outline-none transition-all shadow-xs"
             />
           </div>
 
@@ -103,7 +103,7 @@ export default function TranscriptsPage() {
                   px-3 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition-all duration-150
                   ${selectedCategory === cat
                     ? 'bg-primary text-white shadow-xs font-bold'
-                    : 'bg-white text-ink-secondary hover:text-ink border border-border hover:bg-bg-subtle'
+                    : 'bg-bg-card text-ink-secondary hover:text-ink border border-border hover:bg-bg-subtle'
                   }
                 `}
               >
@@ -128,7 +128,7 @@ export default function TranscriptsPage() {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: idx * 0.04 }}
-                className="group bg-white rounded-card p-5 border border-border hover:border-primary-ring hover:shadow-card-hover transition-all duration-200 flex flex-col justify-between"
+                className="group bg-bg-card rounded-card p-5 border border-border hover:border-primary-ring hover:shadow-card-hover transition-all duration-200 flex flex-col justify-between"
               >
                 <div>
                   <div className="flex items-center justify-between gap-2 mb-2">
