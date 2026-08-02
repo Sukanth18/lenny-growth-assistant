@@ -9,7 +9,7 @@
 ## 🏗️ Architecture Overview
 
 ```
-Frontend (HTML/CSS/JS)
+Frontend (React 18 + Vite + TailwindCSS + Zustand)
   │  REST + SSE streaming
   ▼
 FastAPI Backend
