@@ -39,7 +39,7 @@ export default function ArtifactPanel() {
             flexShrink: 0,
             height: '100%',
             borderLeft: '1px solid var(--color-border)',
-            background: '#fff',
+            background: 'var(--color-bg-card)',
             display: 'flex',
             flexDirection: 'column',
             overflow: 'hidden',
@@ -145,7 +145,7 @@ export default function ArtifactPanel() {
                     width: '100%',
                     height: '100%',
                     border: 'none',
-                    background: '#fff',
+                    background: '#0B0E17',
                     display: 'block',
                   }}
                 />
