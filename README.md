@@ -2,7 +2,7 @@
 
 ## 🎙️ What is this?
 
-**The Lenny Growth Assistant** is a full-stack, AI-powered conversational web application that ingests transcripts from [Lenny's Podcast](https://www.lennyspodcast.com/), allows you to ask complex product management and growth questions, and generates highly specific, formatted content—including Ship30for30-style essays and live HTML/Markdown artifacts—rendered natively in a ChatGPT-like workspace.
+**The Lenny Growth Assistant** is a full-stack, AI-powered conversational web application built with **React 18 & FastAPI** that ingests transcripts from [Lenny's Podcast](https://www.lennyspodcast.com/), allows you to ask complex product management and growth questions, and generates highly specific, formatted content—including Ship30for30-style essays and live HTML/Markdown artifacts—rendered natively in a ChatGPT-like workspace.
 
 ---
 
