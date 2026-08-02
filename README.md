@@ -206,7 +206,7 @@ lenny-growth-assistant/
 
 ## 🎥 Demo Video
 
-[YouTube Link — add after recording]
+[Watch the Demo on YouTube](https://youtu.be/pkreOgLJfw)
 
 ---
 
