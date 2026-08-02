@@ -12,13 +12,13 @@ function ShareOptionCard({ id, icon: Icon, customSvg, label, desc, onClick, acti
       onClick={onClick}
       whileHover={{ scale: 1.02, y: -1 }}
       whileTap={{ scale: 0.98 }}
-      className={`w-full flex items-center gap-3 p-3 rounded-xl border border-border bg-white hover:border-primary-ring hover:shadow-xs transition-all text-left group ${colorClass}`}
+      className={`w-full flex items-center gap-3 p-3 rounded-xl border border-border/80 bg-[#131722] hover:bg-[#1A1F2E] hover:border-indigo-500/40 hover:shadow-card transition-all text-left group ${colorClass}`}
     >
-      <div className="w-10 h-10 rounded-xl bg-bg-subtle group-hover:bg-primary-light flex items-center justify-center text-ink-secondary group-hover:text-primary transition-colors flex-shrink-0">
+      <div className="w-10 h-10 rounded-xl bg-[#23293C] group-hover:bg-indigo-950/60 flex items-center justify-center text-ink-secondary group-hover:text-indigo-400 transition-colors flex-shrink-0">
         {customSvg ? customSvg : <Icon size={18} />}
       </div>
       <div className="flex-1 min-w-0">
-        <p className="text-xs font-bold text-ink group-hover:text-primary transition-colors truncate">{label}</p>
+        <p className="text-xs font-bold text-ink group-hover:text-indigo-400 transition-colors truncate">{label}</p>
         <p className="text-[11px] text-ink-muted truncate">{desc}</p>
       </div>
       {active && (
@@ -176,7 +176,7 @@ export default function ShareModal({ open, onClose, content = '' }) {
               <div className="grid grid-cols-2 gap-2 pt-1">
                 <button
                   onClick={shareTwitter}
-                  className="flex items-center justify-center gap-2 p-2.5 rounded-xl border border-border bg-white hover:bg-bg-subtle text-xs font-semibold text-ink transition-all"
+                  className="flex items-center justify-center gap-2 p-2.5 rounded-xl border border-border/80 bg-[#131722] hover:bg-[#1A1F2E] text-xs font-semibold text-ink transition-all"
                 >
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
@@ -186,9 +186,9 @@ export default function ShareModal({ open, onClose, content = '' }) {
 
                 <button
                   onClick={shareLinkedin}
-                  className="flex items-center justify-center gap-2 p-2.5 rounded-xl border border-border bg-white hover:bg-blue-50 hover:text-blue-600 hover:border-blue-200 text-xs font-semibold text-ink transition-all"
+                  className="flex items-center justify-center gap-2 p-2.5 rounded-xl border border-border/80 bg-[#131722] hover:bg-[#1A1F2E] hover:text-blue-400 hover:border-blue-500/40 text-xs font-semibold text-ink transition-all"
                 >
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" className="text-blue-600">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" className="text-blue-500">
                     <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/>
                   </svg>
                   Share on LinkedIn
